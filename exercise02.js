@@ -7,14 +7,21 @@ const prompt = require('prompt-sync')()
 
 let num = Math.floor(Math.random() * 100 + 1)
 let numUsuario = null
+let tentativas = 0
 
 do {
+    tentativas++
     numUsuario = Number(prompt('Informe um número entre 1 e 100: '))
+
+    if (numUsuario < 1 || numUsuario > 100 || isNaN(numUsuario)) {
+    console.log('Por favor, digite um número válido entre 1 e 100');
+    continue;
+    }
     if(numUsuario > num) {
         console.log('O número que voce digitou é maior que o número secreto')
     } else if (numUsuario < num) {
         console.log('O número que voce digitou é menor que o número secreto')
     } else {
-        console.log('Voce descobriu o número secreto')
+        console.log(`Voce descobriu o número secreto com ${tentativas} tentativas`)
     }
 } while (numUsuario != num)
