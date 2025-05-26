@@ -5,9 +5,9 @@ formarem uma data real (meses de 28–31 dias, ano bissexto para
 fevereiro) e false caso contrário.
 */
 const prompt = require('prompt-sync')()
-let dia = prompt('Informe um dia (xx):')
-let mes = prompt('Informe um mes (xx):')
-let ano = prompt('Informe um ano (xxxx):')
+let dia = Number(prompt('Informe um dia (xx):'))
+let mes = Number(prompt('Informe um mes (xx):'))
+let ano = Number(prompt('Informe um ano (xxxx):'))
 
 function ehAnoBissexto(ano) {
     if (ano % 4 == 0) {
